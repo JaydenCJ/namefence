@@ -1,0 +1,18 @@
+[package]
+name = "namefence"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.75"
+description = "A linter for filenames that will break on Windows, macOS, or cloud sync: reserved names, illegal characters, NFC/NFD duplicates, case collisions and length limits — every finding with a collision-safe fix suggestion."
+license = "MIT"
+repository = "https://github.com/JaydenCJ/namefence"
+keywords = ["filename", "portability", "lint", "unicode", "sync"]
+categories = ["command-line-utilities", "filesystem"]
+
+[dependencies]
+# none — namefence is std-only by design; canonical Unicode normalization
+# is implemented from tables generated out of UnicodeData.txt (UCD 14.0).
+
+[profile.release]
+strip = true
+lto = true
